@@ -1,4 +1,4 @@
-package kamons.text.streamtable;
+package kamons.text.table;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -11,23 +11,23 @@ import java.util.logging.Logger;
  *
  * @author Kason Yang
  */
-public class TextStreamTableWriter {
+public class TextTableWriter {
     
     private OutputStream os;
     
-    private TableConfig config;
+    private TextTableConfig config;
     
     private Charset charset;
 
-    public TextStreamTableWriter(OutputStream os, TableConfig config) {
+    public TextTableWriter(OutputStream os, TextTableConfig config) {
         this(os,config,Charset.defaultCharset());
     }
     
-    public TextStreamTableWriter(OutputStream os, TableConfig config,String charset) {
+    public TextTableWriter(OutputStream os, TextTableConfig config,String charset) {
         this(os,config,Charset.forName(charset));
     }
 
-    public TextStreamTableWriter(OutputStream os,TableConfig config,Charset charset) {
+    public TextTableWriter(OutputStream os,TextTableConfig config,Charset charset) {
         this.os = os;
         this.config = config;
         this.charset = charset;

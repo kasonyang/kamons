@@ -1,15 +1,15 @@
-package kamons.text.streamtable;
+package kamons.text.table;
 /**
  *
  * @author Kason Yang
  */
-public class TableConfig {
+public class TextTableConfig {
     
     private boolean hasBorder;
     
     private int[] columnWidths;
 
-    public TableConfig(boolean hasBorder, int[] columnWidths) {
+    public TextTableConfig(boolean hasBorder, int[] columnWidths) {
         this.hasBorder = hasBorder;
         this.columnWidths = columnWidths;
     }

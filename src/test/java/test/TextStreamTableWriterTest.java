@@ -3,8 +3,8 @@ package test;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.Charset;
-import kamons.text.streamtable.TableConfig;
-import kamons.text.streamtable.TextStreamTableWriter;
+import kamons.text.table.TextTableConfig;
+import kamons.text.table.TextTableWriter;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -20,8 +20,8 @@ public class TextStreamTableWriterTest {
     @Test
     public void test() throws IOException{
         ByteArrayOutputStream os = new ByteArrayOutputStream();
-        TableConfig config = new TableConfig(false, new int[]{4,4,4});
-        TextStreamTableWriter writer  = new TextStreamTableWriter(os, config,"utf-8");
+        TextTableConfig config = new TextTableConfig(false, new int[]{4,4,4});
+        TextTableWriter writer  = new TextTableWriter(os, config,"utf-8");
         writer.printRow("a","b","c");
         assertEquals("   a      b      c      \n", os.toString());
         
