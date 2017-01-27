@@ -62,7 +62,7 @@ public class TextStreamTableWriter {
                 int columnWidth = widths[i];
                 int deleteLen = Math.min( textWidth, columnWidth);
                 int charCount = sbs[i].codePointCount(0, deleteLen);
-                byte[] suffix =new byte[columnWidth - textWidth];
+                byte[] suffix =new byte[columnWidth > textWidth ? columnWidth - textWidth : 0];
                 for(int j=0;j<suffix.length;j++) suffix[j] = ' ';
                 String text = sbs[i].substring(0, charCount);
                 sbs[i].delete(0, charCount);
@@ -71,6 +71,7 @@ public class TextStreamTableWriter {
                 if(suffix.length>0) os.write(suffix);
             }
             this.printRightRowBorder();
+            os.write('\n');
         }
     }
     
