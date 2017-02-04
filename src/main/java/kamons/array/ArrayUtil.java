@@ -4,7 +4,7 @@ package kamons.array;
  *
  * @author Kason Yang
  */
-public class Arrays {
+public class ArrayUtil {
 
     public static int[] toInts(byte[] bytes) {
         if (bytes == null) {
